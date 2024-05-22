@@ -3,7 +3,7 @@ local nnoremap = keymap.nnoremap
 local vnoremap = keymap.vnoremap
 local inoremap = keymap.inoremap
 
-vim.g.mapleader = " "
+vim.g.mapleader = "<space>"
 
 -- Navigate through pane
 nnoremap("<C-h>", ":wincmd h<CR>", { silent=true })
@@ -12,8 +12,8 @@ nnoremap("<C-k>", ":wincmd k<CR>", { silent=true })
 nnoremap("<C-l>", ":wincmd l<CR>", { silent=true })
 
 -- Yank to clipboard
-vnoremap("<leader>y", '"+y')
-nnoremap("<leader>y", '"+y')
+vnoremap("<leader>y", '"+yi')
+nnoremap("<leader>y", '"+yi')
 
 -- Tree
 nnoremap("<C-b>", ":NvimTreeToggle<CR>", { silent=true })
