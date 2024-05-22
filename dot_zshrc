@@ -14,16 +14,9 @@ plugins=(sudo git docker z fd cp zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
 
 # Aliases
-alias zshconfig="nvim ~/.zshrc"
-alias vi="nvim"
-alias vim="nvim"
-alias la="ls -lah"
-alias dcu="docker compose up --build -d"
-alias dcd="docker compose down"
-alias dps="docker ps"
-alias dce="docker compose exec php bash"
-alias dcl="docker compose logs"
-alias docker-compose="docker compose"
+if [ -f ~/.zsh_aliases ]; then
+    source ~/.zsh_aliases
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
