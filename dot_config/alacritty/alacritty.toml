@@ -1,0 +1,26 @@
+[env]
+TERM = "xterm-256color"
+
+[window]
+padding.x = 15
+padding.y = 15
+
+decorations = "None"
+startup_mode = "Maximized"
+
+opacity = 1
+blur = true
+
+[font]
+
+normal.family = "FiraMono Nerd Font"
+size = 14
+
+[selection]
+save_to_clipboard = false
+
+[cursor]
+blink_timeout = 0
+style.blinking = "On"
+
+unfocused_hollow = false
