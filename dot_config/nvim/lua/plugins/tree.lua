@@ -1,20 +1,22 @@
 return {
-	"nvim-tree/nvim-tree.lua", -- Toujours mettre le lien github du projet
-	config = function() -- on configure/initie notre plugin ici
+	"nvim-tree/nvim-tree.lua",
+	config = function()
 		local tree = require("nvim-tree")
-		tree.setup({ -- puis on setup
+
+		tree.setup({
 			renderer = {
+				root_folder_label = false,
 				icons = {
 					show = {
-						file = false,
-						folder = false,
-						folder_arrow = false,
-						git = false
+						file = true,
+						folder = true,
+						folder_arrow = true,
+						git = true
 					}
 				}
 			},
 			view = {
-				adaptive_size = true
+				adaptive_size = true,
 			}
 		})
 	end
