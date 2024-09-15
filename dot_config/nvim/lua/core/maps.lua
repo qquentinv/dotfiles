@@ -3,7 +3,7 @@ local nnoremap = keymap.nnoremap
 local vnoremap = keymap.vnoremap
 local inoremap = keymap.inoremap
 
-vim.g.mapleader = "<space>"
+vim.g.mapleader = " "
 
 -- Navigate through pane
 nnoremap("<C-h>", ":wincmd h<CR>", { silent=true })
