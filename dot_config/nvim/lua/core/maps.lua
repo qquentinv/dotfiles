@@ -56,27 +56,6 @@ nnoremap("<leader>rfmt", ":%! rustfmt<CR>:echo 'Rust format'<CR>", { silent=true
 -- Undotree
 nnoremap("<leader>ut", ":lua vim.cmd.UndotreeToggle()<CR>", { silent=true })
 
--- Harpoon
-nnoremap("<leader>h<Tab>", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", { silent=true })
-nnoremap("<leader>ha", ":lua require('harpoon.mark').add_file()<CR>", { silent=true })
-
-nnoremap("<leader>1", ":lua require('harpoon.ui').nav_file(1)<CR>", { silent=true })
-nnoremap("<leader>2", ":lua require('harpoon.ui').nav_file(2)<CR>", { silent=true })
-nnoremap("<leader>3", ":lua require('harpoon.ui').nav_file(3)<CR>", { silent=true })
-nnoremap("<leader>4", ":lua require('harpoon.ui').nav_file(4)<CR>", { silent=true })
-nnoremap("<leader>&", ":lua require('harpoon.ui').nav_file(1)<CR>", { silent=true })
-nnoremap("<leader>é", ":lua require('harpoon.ui').nav_file(2)<CR>", { silent=true })
-nnoremap("<leader>\"", ":lua require('harpoon.ui').nav_file(3)<CR>", { silent=true })
-nnoremap("<leader>\'", ":lua require('harpoon.ui').nav_file(4)<CR>", { silent=true })
-
-nnoremap("<leader>hn", ":lua require('harpoon.ui').nav_next()<CR>", { silent=true })
-nnoremap("<leader>hp", ":lua require('harpoon.ui').nav_prev()<CR>", { silent=true })
-
--- Aerial
-nnoremap("<leader>a<Tab>", ":AerialToggle!<CR>", { silent=true })
-nnoremap("<leader>an", ":AerialNext<CR>", { silent=true })
-nnoremap("<leader>ap", ":AerialPrev<CR>", { silent=true })
-
 -- Lsp
 nnoremap("<leader>lsph", ":lua vim.lsp.buf.hover()<CR>", { silent=true })
 nnoremap("<leader>gdp", ":lua vim.diagnostic.goto_prev()<CR>", { silent=true })
@@ -91,3 +70,6 @@ nnoremap("<C-f>", "<cmd>Telescope live_grep<CR>")
 nnoremap("<leader>fb", "<cmd>Telescope buffers<CR>")
 nnoremap("<leader>gb", "<cmd>Telescope git_branches<CR>")
 nnoremap("<leader>gc", "<cmd>Telescope git_commits<CR>")
+
+-- DB - Dadbod
+nnoremap("<leader>dbui", ":lua require('core.functions').openInNewTab(':DBUI')<CR>", { silent = true})

@@ -1,7 +1,7 @@
 return {
-	"nvim-telescope/telescope.nvim",
-	tag = '0.1.5', -- on peut choisir le tag souhaité
-	dependencies = { -- certains plugins auront des dépendances...
+	"nvim-telescope/telescope.nvim", 
+	tag = '0.1.3',
+	dependencies = {
 		"nvim-lua/plenary.nvim",
 	},
 	config = function()
@@ -11,6 +11,16 @@ return {
 		telescope.setup({
 			defaults = {
 				file_ignore_patterns = { "node_modules" },
+				vimgrep_arguments = {
+					'rg',
+					'--color=never',
+					'--no-heading',
+					'--with-filename',
+					'--line-number',
+					'--column',
+					'--smart-case',
+					'--hidden' -- thats the new thing
+				},
 				mappings = {
 					i = {
 						["<C-j>"] = actions.move_selection_next,
@@ -25,15 +35,17 @@ return {
 			}
 		})
 
-		-- Nécessité du plugin pour set des bindings
-		-- Ici, le binding est de rechercher le code sélectionné dans telescope
-		
 		local telescope_builtin = require("telescope.builtin")
-		local vnoremap = require("core/keymaps").vnoremap
+		local telescope_utils = require("telescope.utils")
+		local vnoremap = require("core/keymap").vnoremap
 		local func = require("core/functions")
 		vnoremap("<C-f>", function()
 			local text = func.getVisualSelection()
-			telescope_builtin.live_grep({ default_text = text })
+			telescope_builtin.live_grep({ default_text = text, cwd = telescope_utils.buffer_dir() })
 		end, { silent=true })
+		vnoremap("<C-p>", function()
+			local text = func.getVisualSelection()
+			telescope_builtin.find_files({ default_text = text, cwd = telescope_utils.buffer_dir() })
+		end, { silent=true})
 	end
 }

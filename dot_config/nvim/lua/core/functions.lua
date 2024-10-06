@@ -2,7 +2,7 @@ local M = {}
 
 function M.getVisualSelection()
 	vim.cmd('noau normal! "vy"')
-	local text = vin.fn.getreq('v')
+	local text = vim.fn.getreg('v')
 	vim.fn.setreg('v', {})
 
 	text = string.gsub(text, "\n", "")
@@ -11,6 +11,11 @@ function M.getVisualSelection()
 	else
 		return ''
 	end
+end
+
+function M.openInNewTab(cmd)
+	vim.cmd(":tabnew")
+	vim.cmd(cmd)
 end
 
 return M
