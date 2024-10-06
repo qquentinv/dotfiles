@@ -20,12 +20,19 @@ Select around tag | vat
 Select inner paragraph | vip
 Select around paragraph | vap
 
+Increment a number | <C-a>
+Decrement a number | <C-x>
+
+Next occurrence | *
+Previous occurrence | #
+
 ## Telescope
 Find files | <C-p>
 Live grep | <C-f>
 See buffers | <leader>fb
 Git branches | <leader>gb
 Git commits | <leader>gc
+Telescope resume | <leader>tr
 
 ## Telescope-inside
 Move up | <C-k>
@@ -50,10 +57,10 @@ Go to next buffer | <leader>bn
 Close buffer | <leader>bc
 
 ## Tab
-Go to first tab | <leader>tf
-Go to last tab | <leader>tl
-Go to next tab | <leader>tn
-Go to previous tab | <leader>tp
+Go to first tab | <leader>tgg
+Go to last tab | <leader>tG
+Go to next tab | <leader>tl
+Go to previous tab | <leader>th
 Close tab | <leader>tc
 
 ## Register
@@ -87,11 +94,30 @@ Harpoon go to 4 | <leader>4
 
 ## Aerial
 Aerial toggle | <leader>a<Tab>
-Aerial prev | <leader>ap
-Aerial next | <leader>an
+Aerial prev | <leader>ak
+Aerial next | <leader>aj
 
 ## Gitsigns
 Toggle current line blame | <leader>bcl
+
+## Oil
+Go back | -
+Open current working directory | _
+Show help | g?
+Preview file | <C-p>
+Close file | <C-c>
+Refresh | <C-l>
+Vertical split | <C-s>
+Horizontal split | <C-t>
+
+## DB/dadbod
+Open UI | <leader>dbui
+
+## Fugitive
+Open fugitive panel | <leader>Gs
+Open vdiff file | <leader>Gd
+Open file in hub | <leader>Go
+Open blame panel | <leader>Gb
 
 ## Other
 Navigate to left pane | <C-h>
