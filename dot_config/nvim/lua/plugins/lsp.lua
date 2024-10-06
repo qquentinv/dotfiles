@@ -16,7 +16,7 @@ return {
 		local servers = {
 			"clangd",
 			"rust_analyzer",
-			"tsserver",
+			"ts_ls",
 			"quick_lint_js",
 		}
 		local function config(_config)
