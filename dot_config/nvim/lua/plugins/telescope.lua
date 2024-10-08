@@ -37,7 +37,7 @@ return {
 
 		local telescope_builtin = require("telescope.builtin")
 		local telescope_utils = require("telescope.utils")
-		local vnoremap = require("core/keymap").vnoremap
+		local vnoremap = require("core/keymaps").vnoremap
 		local func = require("core/functions")
 		vnoremap("<C-f>", function()
 			local text = func.getVisualSelection()
