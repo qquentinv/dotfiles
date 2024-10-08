@@ -18,6 +18,7 @@ return {
 			"rust_analyzer",
 			"ts_ls",
 			"quick_lint_js",
+			"intelephense",
 		}
 		local function config(_config)
 			return vim.tbl_deep_extend("force", {
@@ -31,7 +32,9 @@ return {
 		})
 		require("mason-lspconfig").setup_handlers({
 			function(server_name)
-				nvim_lsp[server_name].setup(config())
+				local server_config = config()
+
+				nvim_lsp[server_name].setup(server_config)
 			end
 		})
 
